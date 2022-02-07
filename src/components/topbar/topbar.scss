@@ -1,0 +1,59 @@
+.top {
+  z-index: 99;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  font-family: "Josefin Sans", sans-serif;
+  align-items: center;
+  .topLeft,
+  .topRight {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .topIcon {
+      font-size: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+  .topRight {
+    .profilePhoto {
+      display: flex;
+      align-items: center;
+      .topImg {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+    .topListItem {
+      cursor: pointer;
+      list-style: none;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  .topCenter {
+    flex: 6;
+    .topList {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      .topListItem {
+        margin: 0;
+        padding: 0;
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 300;
+        cursor: pointer;
+      }
+    }
+  }
+}

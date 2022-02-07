@@ -1,0 +1,19 @@
+.dropDown {
+  width: 100px;
+  position: absolute;
+  top: 45px;
+  list-style: none;
+  z-index: 98;
+  background-color: #5cabff;
+  .menuList {
+    padding: 0;
+    .menuListItem {
+      cursor: pointer;
+      list-style: none;
+      margin-bottom: 3px;
+      &:hover {
+        background: #5cabff;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.sidebar {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  font-family: "Explora", cursive;
+  border-radius: 10px;
+  .sidebarItem {
+    margin-top: 18px;
+    .sidebarTitle {
+      padding: 5px;
+      border-top: 1px solid #a7a4a4;
+      border-bottom: 1px solid #a7a4a4;
+    }
+    img {
+      margin-top: 18px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .sidebarList {
+      margin-top: 18px;
+      list-style: none;
+      .sidebarListItem {
+        display: inline-block;
+        width: 50%;
+        cursor: pointer;
+      }
+    }
+    .sidebarSocial {
+      margin-top: 18px;
+
+      .sidebarIcon {
+        font-size: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

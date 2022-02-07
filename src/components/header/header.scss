@@ -1,0 +1,27 @@
+.header {
+  margin-top: 18px;
+  .headerTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Explora", cursive;
+    color: #444;
+  }
+  .headerTitleS {
+    position: absolute;
+    top: 12%;
+    font-size: 20px;
+  }
+
+  .headerTitleL {
+    position: absolute;
+    top: 15%;
+    font-size: 100px;
+  }
+  .headerImg {
+    width: 100%;
+    height: 450px;
+    margin-top: 80px;
+    object-fit: cover;
+  }
+}
