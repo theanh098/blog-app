@@ -27,13 +27,14 @@ function Setting() {
     };
 
     if (img) {
-      data.newData.profilePic = `http://localhost:5000/static/profileImg/${img.name}`;
+      const photo = new FormData();
+      const filename = (Date.now().toString() + img.name).replace(/\s+/g, "");
+      photo.append("filename", filename);
+      photo.append("profilePhoto", img);
+      data.newData.profilePic = `http://localhost:5000/static/profileImg/${filename}`;
       data.newData.oldPhoto = currentUser.photo.substring(
         currentUser.photo.lastIndexOf("/") + 1
       );
-      const photo = new FormData();
-      photo.append("filename", img.name);
-      photo.append("profilePhoto", img);
       try {
         await axios.post("http://localhost:5000/api/profileImg/upload", photo);
         await axios.post("http://localhost:5000/api/auth/update", data);
@@ -41,7 +42,7 @@ function Setting() {
           "user",
           JSON.stringify({
             username: nameRef.current.value,
-            photo: `http://localhost:5000/static/profileImg/${img.name}`,
+            photo: `http://localhost:5000/static/profileImg/${filename}`,
           })
         );
         alert("your change have been uploaded");

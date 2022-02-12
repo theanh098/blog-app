@@ -18,7 +18,8 @@ function Write() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const postPhoto = new FormData();
-    postPhoto.append("filename", img.name);
+    const filename = (Date.now().toString() + img.name).replace(/\s+/g, "");
+    postPhoto.append("filename", filename);
     postPhoto.append("postPhotoFile", img);
     try {
       const res = await axios.post(
@@ -28,9 +29,9 @@ function Write() {
       if (res.data === "have been uploaded") {
         try {
           const post = {
-            title: titleRef.current.value,
-            desc: descRef.current.value,
-            photo: `http://localhost:5000/static/postImg/${img.name}`,
+            title: titleRef.current.value || "default",
+            desc: descRef.current.value || "default",
+            photo: `http://localhost:5000/static/postImg/${filename}`,
             username: currentUser.username,
           };
           const res = await axios.post(
